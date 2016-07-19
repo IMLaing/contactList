@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact List</title>
+	<link type='text/css' href='style.css' rel="stylesheet">
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+	<script   src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+
+	<script type="text/javascript" src="js/script.js"></script>
+	
+	
+	
+	
+	
+</head>
+<body>
+	<form name="contactForm" action="">
+  <fieldset>
+  <legend>Contact Information:</legend>
+
+    <label>First Name<input type="text" name="firstName" placeholder="First name"></input></label><br>
+<label>Last Name<input type="text" name="lastName" placeholder="Last name"></input></label><br>
+<label>Phone Number<input type="text" name="phone" placeholder="Phone Number"></input></label><br>
+<label>eMail<input type="text" name="eMail" placeholder="eMail"></input></label><br>
+<label>Street<input type="text" name="street" placeholder="Street "></input></label><br>
+<label>City<input type="text" name="city" placeholder="City"></input></label><br>
+<label>State<input type="text" name="state" placeholder="State"></input></label><br>
+<input class="button" type="button" name='addContact' value="Add" onClick="createNewContact(this.form)"> <!--This will run a function on click-->
+</fieldset>
+</form>
+<div class="contactDisplay"></div>
+<h1> Contacts: </h1>
+<div class="contactList"></div>
+<button id="callContact">CALL CONTACT</button>
+
+</body>
+</html>
