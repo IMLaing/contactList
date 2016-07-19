@@ -2,8 +2,17 @@
 $(document).ready(function(){
 console.log('ready!');
  
-$('#callContact').click(function(){
-    console.log('callContact clicked');
+$('.contactList').on('click', 'button', function(){
+    console.log(this);
+    var id = $(this).attr('data-contactID');
+    console.log(id);
+      // element is a contact inside the savedContacts array. find() itterates through the array and runs on  EVERY element.
+    var contact = savedContacts.find(function(element){
+      if (id == element.id){
+        return true;
+      }
+    });
+    console.log(contact);
     var html = '<p> Name: '+ savedContacts[0].newContact.firstName + ' ' + savedContacts[0].newContact.lastName + '</p>'; 
     html += '<p>Phone: '+ savedContacts[0].newContact.phone +'</p>';
     html += '<p>eMail: '+ savedContacts[0].newContact.eMail +'</p>';
@@ -12,8 +21,9 @@ $('#callContact').click(function(){
     $('.contactDisplay').html(html);
   });
 
-$('[name="contactForm"]').on('submit', function(){
-    var newContact = new Contact({
+$('[name="contactForm"]').on('submit', function(event){
+  event.preventDefault();
+  var newContact = new Contact({
       firstName: this.firstName.value,
       lastName: this.lastName.value,
       phone: this.phone.value,
@@ -22,8 +32,8 @@ $('[name="contactForm"]').on('submit', function(){
       city: this.city.value,
       state: this.state.value
     });
-    savedContacts.push({newContact});    
-    $('.contactList').append('<button> '+ newContact.firstName + ' ' + newContact.lastName+'</button><br>'); 
+    savedContacts.push(newContact);    
+    $('.contactList').append(newContact.displayButton()); 
 });
 
 });
@@ -43,8 +53,9 @@ var Contact = function(data){
     contactID++;
   };
 
+Contact.prototype.displayButton = function(){
+  return '<button data-contactID=" ' + this.id + ' "> '+ this.firstName + ' ' + this.lastName+'</button><br>';
+} ;
 
 
 
-
-savedContacts.find(callback[id]);
