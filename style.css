@@ -1,3 +1,7 @@
+form {
+  width: 30%;
+  margin: 0 auto;
+}
 input {
   margin: 5px;
   padding: 10px;
@@ -7,6 +11,10 @@ fieldset {
   width: 300px;
 }
 
+.monitor {
+  position:absolute;
+  top: 0px;
+}
 .button {
   border-radius: 25px;
   background: darkorange;
@@ -15,3 +23,15 @@ fieldset {
   font-size: 1.2em;
   border: none;
 }
+
+.hideAltPhone {
+  display: none;
+}
+
+.toggle-button {
+  color: blue;
+  font-size: 1em;
+  margin: 0;
+  cursor: pointer;
+}
+
