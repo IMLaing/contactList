@@ -12,13 +12,8 @@ $('.contactList').on('click', 'button', function(){
         return true;
       }
     });
-    console.log(contact);
-    var html = '<p> Name: '+ savedContacts[0].newContact.firstName + ' ' + savedContacts[0].newContact.lastName + '</p>'; 
-    html += '<p>Phone: '+ savedContacts[0].newContact.phone +'</p>';
-    html += '<p>eMail: '+ savedContacts[0].newContact.eMail +'</p>';
-    html += '<p> Address: '+ savedContacts[0].newContact.street + ' ';
-    html += savedContacts[0].newContact.city + ', ' +savedContacts[0].newContact.state +'</p>';
-    $('.contactDisplay').html(html);
+    console.log(contact);    
+    $('.contactDisplay').html(contact.displayDetails());
   });
 
 $('[name="contactForm"]').on('submit', function(event){
@@ -50,12 +45,18 @@ var Contact = function(data){
     this.city = data.city;
     this.state = data.state;
     this.id = contactID;
-    contactID++;
-  };
+    contactID++; 
+};
 
 Contact.prototype.displayButton = function(){
   return '<button data-contactID=" ' + this.id + ' "> '+ this.firstName + ' ' + this.lastName+'</button><br>';
-} ;
+};
 
-
-
+Contact.prototype.displayDetails = function(){
+var html = '<p> Name: '+ this.firstName + ' ' + this.lastName + '</p>'; 
+    html += '<p>Phone: '+ this.phone +'</p>';
+    html += '<p>eMail: '+ this.eMail +'</p>';
+    html += '<p> Address: '+ this.street + ' ';
+    html += this.city + ', ' + this.state +'</p>';
+    return html;
+};
