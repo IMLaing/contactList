@@ -12,7 +12,8 @@ fieldset {
 }
 
 .monitor {
-  left: 100px;
+  position:absolute;
+  top: 0px;
 }
 .button {
   border-radius: 25px;
@@ -23,7 +24,7 @@ fieldset {
   border: none;
 }
 
-.hideAltPhone, .hideEdit {
+.hideAltPhone {
   display: none;
 }
 
@@ -34,11 +35,13 @@ fieldset {
   cursor: pointer;
 }
 
-.editButton {
+.hideAltAddr {
+  display: none;
+}
+
+.toggle-buttonAddr {
   color: blue;
   font-size: 1em;
   margin: 0;
   cursor: pointer;
 }
-
-
