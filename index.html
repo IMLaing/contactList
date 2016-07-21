@@ -15,29 +15,47 @@
 	
 </head>
 <body>
-		<form name="contactForm" action="">
-  <fieldset>
-  <legend>Contact Information:</legend>
+	<form name="contactForm" action="">
+		<fieldset>
+			<legend>Contact Information:</legend>
 
-    <label>First Name<input type="text" name="firstName" placeholder="First name"></input></label><br>
-<label>Last Name<input type="text" name="lastName" placeholder="Last name"></input></label><br>
-<label>Phone Number<input type="text" name="phone" placeholder="Phone Number"></input></label>
-<label class="hideAltPhone">Alt. Phone Number<input type="text" name="phone2" placeholder="Phone Number"></input></label>
-<p class='toggle-button'> + Phone Number </p><br>
-<label>eMail<input type="text" name="eMail" placeholder="eMail"></input></label><br>
-<label>Street<input type="text" name="street" placeholder="Street "></input></label><br>
-<label>City<input type="text" name="city" placeholder="City"></input></label><br>
-<label>State<input type="text" name="state" placeholder="State"></input></label><br>
-<input class="button" type="submit" name='addContact' value="Add"> <!--This will run a function on click-->
-</fieldset>
-</form>
+			<label>First Name<input type="text" name="firstName" placeholder="First name"></input></label><br>
+			<label>Last Name<input type="text" name="lastName" placeholder="Last name"></input></label><br>
+			<label>Phone Number<input type="text" name="phone" placeholder="Phone Number"></input></label>
+			<label class="hideAltPhone">Alt. Phone Number<input type="text" name="phone2" placeholder="Phone Number"></input></label>
+			<p class='toggle-button'> + Phone Number </p><br>
+			<label>eMail<input type="text" name="eMail" placeholder="eMail"></input></label><br>
+			<label>Street<input type="text" name="street" placeholder="Street "></input></label><br>
+			<label>City<input type="text" name="city" placeholder="City"></input></label><br>
+			<label>State<input type="text" name="state" placeholder="State"></input></label><br>
+			<input class="button" type="submit" name='addContact' value="Add"> <!--This will run a function on click-->
+		</fieldset>
+	</form>
 
 
-<div class="monitor">
-  <h1 class='center'> Contacts: </h1>
-<div class="contactList"></div>
-  <h1> Details: </h1>
-  <div class="contactDisplay"></div>
-</div>
+	<div class="monitor">
+	<!--		<form name="editForm"  class="hideEdit" action="">
+				<fieldset>
+					<legend>Edit Contact:</legend>
+
+					<label>First Name<input type="text" name="firstName" placeholder="First name"></input></label><br>
+					<label>Last Name<input type="text" name="lastName" placeholder="Last name"></input></label><br>
+					<label>Phone Number<input type="text" name="phone" placeholder="Phone Number"></input></label>
+					<label class="toggle-editButton">Alt. Phone Number<input type="text" name="phone2" placeholder="Phone Number"></input></label>
+					<p class='toggle-button'> + Phone Number </p><br>
+					<label>eMail<input type="text" name="eMail" placeholder="eMail"></input></label><br>
+					<label>Street<input type="text" name="street" placeholder="Street "></input></label><br>
+					<label>City<input type="text" name="city" placeholder="City"></input></label><br>
+					<label>State<input type="text" name="state" placeholder="State"></input></label><br>
+					<input class="button" type="submit" name='addContact' value="Add"> 
+				</fieldset>
+			</form> -->
+		
+		<h1 class='center'> Contacts: </h1>
+		<div class="contactList"></div>
+		<h1> Details: </h1>
+		<div class="contactDisplay"></div>
+	</div>
 </body>
 </html>
+
