@@ -25,10 +25,10 @@ $(document).ready(function(){
     });
 
 //edit button to updated data from form
-  $('.contactDisplay').on('click', '#editContact', function(){
-    console.log(this);
-    var id = $(this).attr('data-contactID');
-    console.log(id);
+$('.contactDisplay').on('click', '#editContact', function(){
+  console.log(this);
+  var id = $(this).attr('data-contactID');
+  console.log(id);
       // element is a contact inside the savedContacts array. find() itterates through the array and runs on  EVERY element.
       var contact = savedContacts.find(function(element){
         if (id == element.id){
@@ -36,26 +36,25 @@ $(document).ready(function(){
         }
       });
       console.log(contact);    
-       $('[name="firstName"]').val(contact.firstName);
-       $('[name="lastName"]').val(contact.lastName);
-       $('[name="phone"]').val(contact.phone);
-       $('[name="phone2"]').val(contact.phone2);
-       $('[name="eMail"]').val(contact.eMail);
-       $('[name="street"]').val(contact.street);
-       $('[name="city"]').val(contact.city);
-       $('[name="state"]').val(contact.state);
-       $('[name="street2"]').val(contact.street2);
-       $('[name="city2"]').val(contact.city2);
-       $('[name="state2"]').val(contact.state2);
-       $('[name="idHolder"]').val(contact.id);
+      $('[name="firstName"]').val(contact.firstName);
+      $('[name="lastName"]').val(contact.lastName);
+      $('[name="phone"]').val(contact.phone);
+      $('[name="phone2"]').val(contact.phone2);
+      $('[name="eMail"]').val(contact.eMail);
+      $('[name="street"]').val(contact.street);
+      $('[name="city"]').val(contact.city);
+      $('[name="state"]').val(contact.state);
+      $('[name="street2"]').val(contact.street2);
+      $('[name="city2"]').val(contact.city2);
+      $('[name="state2"]').val(contact.state2);
+      $('[name="idHolder"]').val(contact.id);
     });
 
 
 
-  $('[name="contactForm"]').on('submit', function(event){
-    event.preventDefault();
-    if ($('[name="idHolder"]').val() == ''){
-    var newContact = new Contact({
+$('[name="contactForm"]').on('submit', function(event){
+  event.preventDefault();
+  var newContact = new Contact({
       firstName: this.firstName.value,
       lastName: this.lastName.value,
       phone: this.phone.value,
@@ -70,32 +69,11 @@ $(document).ready(function(){
     });  
     savedContacts.push(newContact);    
     $('.contactList').append(newContact.displayButton()); 
-    } else {
-       var id = $('[name="idHolder"]').val();
-    console.log(id);
-      // element is a contact inside the savedContacts array. find() itterates through the array and runs on  EVERY element.
-      var contact = savedContacts.find(function(element){
-        if (id == element.id){
-          return true;
-        }
-      contact.firstName = this.firstName.value;
-      contact.lastName = this.lastName.value;
-      contact.phone = this.phone.value;
-      contact.phone2 = this.phone2.value;
-      contact.eMail = this.eMail.value;
-      contact.street = this.street.value;
-      contact.city = this.city.value;
-      contact.state = this.state.value;
-      contact.street2 = this.street2.value;
-      contact.city2 = this.city2.value;
-      contact.state2 = this.state2.value;
-      });
-
-    }
+   
 
 
-  $('[name="contactForm"]').trigger('reset');
-});
+    $('[name="contactForm"]').trigger('reset');
+  });
 
 
 
@@ -143,7 +121,19 @@ Contact.prototype.displayDetails = function(){
     console.log(this.state2 + ' was not empty');
     html += '<p>Alt state: '+ this.state2 +'</p>';
   }
-  html += '<button id="editContact" data-contactID=" ' + this.id + ' "> Edit </button>';
+  if (this.street2 === "" || this.street2 === null){
+    console.log(this.street2 + ' was empty!');
+  } else {
+    console.log(this.street2 + ' was not empty');
+    html += '<p>Alt state: '+ this.street2 +'</p>';
+  }
+  if (this.city2 === "" || this.city2 === null){
+    console.log(this.city2 + ' was empty!');
+  } else {
+    console.log(this.city2 + ' was not empty');
+    html += '<p>Alt state: '+ this.city2 +'</p>';
+  }
+  //html += '<button id="editContact" data-contactID=" ' + this.id + ' "> Edit </button>';
   return html;
 };
 

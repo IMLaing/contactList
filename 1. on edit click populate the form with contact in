@@ -1,0 +1,6 @@
+1. on edit click populate the form with contact info
+2. add hidden input element (<p hidden> </p>) which holds the ID for the contact being edited 
+3. submit handler should check for the hidden input element
+		if it has the ID - should not create new, should update information on contact on correct id
+		if it doesn't not have ID- just add new contact
+4. ID should be removed from hidden element after updating
